@@ -1,6 +1,7 @@
 # Python - Hello, World
 
-This project is a gentle entry to Python, focusing on the core syntax elements you will use everywhere: printing, string handling, slicing, and respecting pycodestyle. Below you will find the reference resources, learning objectives, and a short walk-through of each task we implemented.
+## Project Overview
+This project introduces absolute beginners to core Python basics: running scripts, printing text and numbers, working with strings, and following coding style (pycodestyle). Each small task focuses on one idea, so you build confidence step by step.
 
 ## Resources
 - Learn to Program (playlist)
@@ -10,26 +11,82 @@ This project is a gentle entry to Python, focusing on the core syntax elements y
 - How To Use String Formatters in Python 3
 - Pycodestyle – Style Guide for Python Code
 
-## Learning Objectives
-- Use the Python interpreter
-- Print text and variables with `print()`
-- Work with strings, concatenation, and repetition
-- Apply indexing and slicing for substrings
-- Follow the official Python coding style with `pycodestyle`
+## Learning Objectives (mapped to tasks)
+- Use the Python interpreter and run scripts (`./file.py`) — tasks 0–7
+- Print text and variables with `print()` — tasks 0–3
+- Format values with f-strings — tasks 1, 2, 4
+- Work with strings: concatenation and repetition — tasks 3, 4
+- Apply indexing and slicing for substrings — tasks 3, 5, 6
+- Follow Python style with `pycodestyle` — all tasks
 
-## Task Notes and Key Constructs
-- **0. Hello, print**: Basic `print()` with an escaped quote; shebang `#!/usr/bin/python3` and executable bit required.
-- **1. Print integer**: `f"{number} Battery street"`—uses f-strings, no casting to `str`.
-- **2. Print float**: `f"Float: {number:.2f}"`—format specifier `:.2f` for 2 decimals.
-- **3. Print string**: String repetition (`str * 3`) and slicing (`str[:9]`) for prefixes.
-- **4. Play with strings**: Concatenate pieces using existing vars: `str1 = str1 + " " + str2`; then print the composed sentence.
-- **5. Copy - Cut - Paste**: Slice pieces from `word`:
-	- `word_first_3 = word[:3]`
-	- `word_last_2 = word[-2:]`
-	- `middle_word = word[1:-1]`
-- **6. Create a new sentence**: Build `"object-oriented programming with Python"` only from slices of the provided `str`, no new literals or vars:
-	- `str = str[39:67] + str[107:112] + str[:6]`
-- **7. Easter Egg**: Print the Zen of Python in under 98 chars of source by `import this`.
+## Task-by-Task Explanations
+
+### 0. Hello, print
+- **What it does:** Prints a sentence with a leading quote.
+- **Concept:** Basic `print()`, escaping quotes.
+- **Output example:**
+	```
+	"Programming is like building a multilingual puzzle
+	```
+- **Constraint:** Keep shebang `#!/usr/bin/python3`, no extra text.
+
+### 1. Print integer
+- **What it does:** Prints an integer followed by text on one line.
+- **Concept:** f-strings with integers (no casting).
+- **Output example:** `98 Battery street`
+- **Constraint:** Do not cast number to string; use `f"{number}"`.
+
+### 2. Print float
+- **What it does:** Prints a float with exactly 2 decimal places.
+- **Concept:** f-strings with format specifier `:.2f`.
+- **Output example:** `Float: 3.14`
+- **Constraint:** No string casting; use f-string formatting.
+
+### 3. Print string
+- **What it does:** Prints the string 3 times, then its first 9 characters.
+- **Concepts:** String repetition (`str * 3`) and slicing (`str[:9]`).
+- **Output example:**
+	```
+	Holberton SchoolHolberton SchoolHolberton School
+	Holberton
+	```
+- **Constraint:** No loops/conditionals; only repetition and slicing.
+
+### 4. Play with strings
+- **What it does:** Builds `"Welcome to Holberton School!"` by joining two variables.
+- **Concept:** String concatenation and f-strings.
+- **Output example:** `Welcome to Holberton School!`
+- **Constraint:** Use provided vars `str1`, `str2`; no new vars.
+
+### 5. Copy - Cut - Paste
+- **What it does:** Extracts parts of `word` (first 3, last 2, middle) and prints them.
+- **Concepts:** Slicing with positive/negative indices.
+- **Output example:**
+	```
+	First 3 letters: Hol
+	Last 2 letters: on
+	Middle word: olberto
+	```
+- **Constraint:** No loops/conditionals; use slicing only.
+
+### 6. Create a new sentence
+- **What it does:** Rebuilds `object-oriented programming with Python` from slices of a long string.
+- **Concepts:** String slicing and concatenation without new literals.
+- **Output example:** `object-oriented programming with Python`
+- **Constraints:** Exactly 5 lines; no new variables; no new string literals; use slices of the given `str` only.
+
+### 7. Easter Egg
+- **What it does:** Prints “The Zen of Python, by Tim Peters”.
+- **Concept:** Importing a module (`import this`) to emit text.
+- **Constraint:** Script length under 98 characters.
+
+## Key Python Concepts Used
+- **f-strings:** Embed values directly: `f"Float: {number:.2f}"`.
+- **String slicing:** `word[:3]`, `word[-2:]`, `word[1:-1]` to grab parts of a string.
+- **Indexing:** Access characters by position; negative indices count from the end.
+- **String concatenation:** Join pieces with `+` or by building new strings from slices.
+- **String repetition:** Multiply strings, e.g., `str * 3` to repeat text.
+- **Formatting floats:** Use format spec `:.2f` inside f-strings for fixed decimals.
 
 ## Code Listings (for reference)
 ```python
@@ -85,5 +142,10 @@ import this
 ## Conventions Used
 - Shebang on line 1: `#!/usr/bin/python3`
 - Every file ends with a newline and is executable (`chmod +x file.py`).
-- No loops or conditionals where the instructions forbid them—use slicing, concatenation, and f-strings instead.
+- No loops or conditionals where instructions forbid them—use slicing, concatenation, and f-strings instead.
 - Style checked with `pycodestyle` (2.7.*).
+
+## How to Run
+- Make scripts executable (one time): `chmod +x 2-print.py 3-print_number.py 4-print_float.py 5-print_string.py 6-concat.py 7-edges.py 8-concat_edges.py 9-easter_egg.py`
+- Run a script from the project folder: `./4-print_float.py`
+- Expected output appears immediately in the terminal.
