@@ -31,6 +31,57 @@ This project is a gentle entry to Python, focusing on the core syntax elements y
 	- `str = str[39:67] + str[107:112] + str[:6]`
 - **7. Easter Egg**: Print the Zen of Python in under 98 chars of source by `import this`.
 
+## Code Listings (for reference)
+```python
+# 0. Hello, print
+#!/usr/bin/python3
+print("\"Programming is like building a multilingual puzzle")
+
+# 1. Print integer
+#!/usr/bin/python3
+number = 98
+print(f"{number} Battery street")
+
+# 2. Print float
+#!/usr/bin/python3
+number = 3.14159
+print(f"Float: {number:.2f}")
+
+# 3. Print string
+#!/usr/bin/python3
+str = "Holberton School"
+print(str * 3)
+print(str[:9])
+
+# 4. Play with strings
+#!/usr/bin/python3
+str1 = "Holberton"
+str2 = "School"
+str1 = str1 + " " + str2
+print(f"Welcome to {str1}!")
+
+# 5. Copy - Cut - Paste
+#!/usr/bin/python3
+word = "Holberton"
+word_first_3 = word[:3]
+word_last_2 = word[-2:]
+middle_word = word[1:-1]
+print(f"First 3 letters: {word_first_3}")
+print(f"Last 2 letters: {word_last_2}")
+print(f"Middle word: {middle_word}")
+
+# 6. Create a new sentence
+#!/usr/bin/python3
+str = "Python is an interpreted, interactive, object-oriented programming\
+ language that combines remarkable power with very clear syntax"
+str = str[39:67] + str[107:112] + str[:6]
+print(str)
+
+# 7. Easter Egg
+#!/usr/bin/python3
+import this
+```
+
 ## Conventions Used
 - Shebang on line 1: `#!/usr/bin/python3`
 - Every file ends with a newline and is executable (`chmod +x file.py`).
