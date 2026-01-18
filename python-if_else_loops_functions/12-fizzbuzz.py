@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""Provide `fizzbuzz()` to print numbers 1..100 with rules.
+
+Multiples of 3 print "Fizz", multiples of 5 print "Buzz", and multiples
+of both print "FizzBuzz". Each element is followed by a space.
+"""
 def fizzbuzz():
     """Print numbers from 1 to 100 with Fizz, Buzz, FizzBuzz rules.
 
@@ -8,6 +13,7 @@ def fizzbuzz():
     Otherwise: print the number
     Each element is followed by a space.
     """
+    # Loop from 1 to 100 inclusive
     for i in range(1, 101):
         if i % 15 == 0:
             print("FizzBuzz", end=' ')
