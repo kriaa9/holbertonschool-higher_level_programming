@@ -5,6 +5,7 @@ The last digit is computed with `abs(number) % 10` so that negatives
 produce the expected positive digit while printing matches the tasks.
 """
 
+
 def print_last_digit(number):
     """Print and return the last digit of a number.
 

@@ -5,6 +5,7 @@ This tiny module demonstrates function definition, parameters, and return
 values. No imports are used.
 """
 
+
 def add(a, b):
     """Add two integers and return the result.
 

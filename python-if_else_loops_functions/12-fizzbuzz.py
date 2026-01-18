@@ -5,6 +5,7 @@ Multiples of 3 print "Fizz", multiples of 5 print "Buzz", and multiples
 of both print "FizzBuzz". Each element is followed by a space.
 """
 
+
 def fizzbuzz():
     """Print numbers from 1 to 100 with Fizz, Buzz, FizzBuzz rules.
 
