@@ -4,6 +4,7 @@
 Demonstrates Python's exponentiation operator **, which supports negative
 exponents (returning floats) and negative bases.
 """
+
 def pow(a, b):
     """Compute a to the power of b and return the value.
 
