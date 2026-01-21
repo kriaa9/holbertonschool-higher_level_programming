@@ -122,5 +122,4 @@ print(add(1, 2))  # Output: 3
 - Use the `__name__ == "__main__"` check to make your scripts reusable as both standalone programs and importable modules.
 
 ---
-
 Happy coding!
