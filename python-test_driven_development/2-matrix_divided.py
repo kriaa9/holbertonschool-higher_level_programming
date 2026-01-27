@@ -8,14 +8,14 @@ It includes robust error handling for input validation.
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a divisor (div).
-    
+
     Args:
         matrix: A list of lists of integers or floats.
         div: A number (integer or float) to divide by.
-        
+
     Returns:
         A new matrix with the result of the division rounded to 2 decimal places.
-        
+
     Raises:
         TypeError: If matrix is not a list of lists of integers/floats.
         TypeError: If rows of the matrix are not the same size.
@@ -30,7 +30,7 @@ def matrix_divided(matrix, div):
 
     # Error message for matrix validation
     type_err_msg = "matrix must be a matrix (list of lists) of integers/floats"
-    
+
     # 2. Validate 'matrix' structure and content
     if not isinstance(matrix, list) or len(matrix) == 0:
         raise TypeError(type_err_msg)

@@ -19,11 +19,13 @@ Negative numbers and floats:
 >>> matrix_divided(matrix, 2)
 [[0.75, -1.25], [1.65, -2.2]]
 
-Check that the original matrix is not modified:
->>> matrix
-[[1.5, -2.5], [3.3, -4.4]]
+2. Edge Cases: Infinity and Zero
+--------------------------------
+Division by Infinity (should be 0.0):
+>>> matrix_divided(matrix, float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
 
-2. Error Cases: 'div' Validation
+3. Error Cases: 'div' Validation
 --------------------------------
 Div is not a number:
 >>> matrix_divided(matrix, "2")
@@ -37,7 +39,7 @@ Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
 
-3. Error Cases: Matrix Structure
+4. Error Cases: Matrix Structure
 --------------------------------
 Matrix is not a list:
 >>> matrix_divided((1, 2), 2)
@@ -58,7 +60,7 @@ Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-4. Error Cases: Row Sizes
+5. Error Cases: Row Sizes
 -------------------------
 Rows have different sizes:
 >>> matrix = [[1, 2, 3], [4, 5]]
@@ -66,3 +68,17 @@ Rows have different sizes:
 Traceback (most recent call last):
     ...
 TypeError: Each row of the matrix must have the same size
+
+6. Error Cases: Missing Arguments
+---------------------------------
+Missing both arguments:
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Missing one argument (div):
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
