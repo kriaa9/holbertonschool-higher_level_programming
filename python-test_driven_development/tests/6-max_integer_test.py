@@ -6,12 +6,10 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """
-    TestCase for the max_integer function
-    """
+    """TestCase for the max_integer function"""
 
     def test_regular_list(self):
-        """Test with a standard list of integers"""
+        """Test with a standard ordered list of integers"""
         l = [1, 2, 3, 4]
         result = max_integer(l)
         self.assertEqual(result, 4)
@@ -32,7 +30,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test with an empty list"""
         l = []
         result = max_integer(l)
-        self.assertEqual(result, None)
+        self.assertIsNone(result)
 
     def test_one_element(self):
         """Test with a list containing only one integer"""
@@ -66,7 +64,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_empty_string(self):
         """Test with an empty string"""
-        self.assertEqual(max_integer(""), None)
+        self.assertIsNone(max_integer(""))
 
     def test_negative_numbers(self):
         """Test with a list of negative numbers"""
