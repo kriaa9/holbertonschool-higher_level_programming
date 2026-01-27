@@ -9,8 +9,8 @@ class Square:
         """Initialize a new Square.
 
         Args:
-            size (int): The size of the new square. Defaults to 0.
-            position (tuple): The position of the new square. Defaults to (0, 0).
+            size (int): The size of the new square.
+            position (tuple): The position of the new square.
         """
         self.size = size
         self.position = position
@@ -52,6 +52,7 @@ class Square:
             print("")
             return
 
-        [print("") for i in range(self.__position[1])]
-        for i in range(self.__size):
+        for i in range(0, self.__position[1]):
+            print("")
+        for i in range(0, self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
