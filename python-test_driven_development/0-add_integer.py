@@ -9,7 +9,7 @@ before addition, and raises TypeErrors for invalid inputs.
 def add_integer(a, b=98):
     """
     Adds two integers.
-    
+
     Returns:
         The addition of a and b as an integer.
     """
@@ -17,5 +17,5 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    
+
     return int(a) + int(b)
