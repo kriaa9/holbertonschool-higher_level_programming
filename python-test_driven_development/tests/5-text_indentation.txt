@@ -1,0 +1,69 @@
+The text_indentation module
+===========================
+
+Using the text_indentation function:
+------------------------------------
+
+Importing the function:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+1. Standard Valid Cases
+-----------------------
+Basic sentence:
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+
+Multiple punctuation:
+>>> text_indentation("Hello? How are you: I am fine.")
+Hello?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+I am fine.
+<BLANKLINE>
+
+Extra spaces handling (should be stripped):
+>>> text_indentation("   Hello.   World   ")
+Hello.
+<BLANKLINE>
+World
+
+No punctuation at the end:
+>>> text_indentation("Hello world")
+Hello world
+
+Consecutive punctuation:
+>>> text_indentation("Hello.. World")
+Hello.
+<BLANKLINE>
+.
+<BLANKLINE>
+World
+
+2. Error Cases: Type Validation
+-------------------------------
+Integer input:
+>>> text_indentation(5)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+None input:
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+Float input:
+>>> text_indentation(12.5)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+List input:
+>>> text_indentation(["Hello"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
