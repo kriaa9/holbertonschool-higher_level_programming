@@ -8,8 +8,8 @@ The ``BaseGeometry`` module defines a base geometry class with validation.
 
 Test 1: Create a BaseGeometry instance
 >>> bg = BaseGeometry()
->>> print(bg)
-<7-base_geometry.BaseGeometry object at ...
+>>> print(bg)  # doctest: +ELLIPSIS
+<7-base_geometry.BaseGeometry object at ...>
 >>> type(bg)
 <class '7-base_geometry.BaseGeometry'>
 
