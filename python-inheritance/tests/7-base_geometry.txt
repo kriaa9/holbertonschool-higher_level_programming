@@ -25,6 +25,18 @@ Test 3: Valid integer validation
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("height", 1)
 
+Test 3b: Missing arguments
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print("[{}]".format(e.__class__.__name__))
+[TypeError]
+>>> try:
+...     bg.integer_validator("age")
+... except Exception as e:
+...     print("[{}]".format(e.__class__.__name__))
+[TypeError]
+
 Test 4: String instead of integer
 >>> try:
 ...     bg.integer_validator("name", "John")
@@ -73,6 +85,13 @@ Test 10: List instead of integer
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] items must be an integer
+
+Test 10b: Set instead of integer
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
 
 Test 11: Dictionary instead of integer
 >>> try:
