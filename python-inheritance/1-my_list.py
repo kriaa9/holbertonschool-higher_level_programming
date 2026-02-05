@@ -21,6 +21,8 @@ class MyList(list):
         This method prints a sorted version of the list without modifying
         the original list. Assumes all elements are integers.
 
+        Handles empty lists by printing an empty list.
+
         Returns:
             None
         """
