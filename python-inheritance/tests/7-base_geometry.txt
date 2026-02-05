@@ -1,0 +1,99 @@
+===========================
+Module: 7-base_geometry
+===========================
+
+The ``BaseGeometry`` module defines a base geometry class with validation.
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test 1: Create a BaseGeometry instance
+>>> bg = BaseGeometry()
+>>> print(bg)
+<7-base_geometry.BaseGeometry object at ...
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
+
+Test 2: Test area() method raises exception
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
+
+Test 3: Valid integer validation
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("height", 1)
+
+Test 4: String instead of integer
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+Test 5: Zero value
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+
+Test 6: Negative value
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+
+Test 7: Float instead of integer
+>>> try:
+...     bg.integer_validator("width", 3.14)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] width must be an integer
+
+Test 8: None value
+>>> try:
+...     bg.integer_validator("size", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] size must be an integer
+
+Test 9: Boolean value (should raise TypeError)
+>>> try:
+...     bg.integer_validator("flag", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] flag must be an integer
+
+Test 10: List instead of integer
+>>> try:
+...     bg.integer_validator("items", [1, 2, 3])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] items must be an integer
+
+Test 11: Dictionary instead of integer
+>>> try:
+...     bg.integer_validator("data", {"key": "value"})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] data must be an integer
+
+Test 12: Tuple instead of integer
+>>> try:
+...     bg.integer_validator("coords", (1, 2))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] coords must be an integer
+
+Test 13: Large positive integer
+>>> bg.integer_validator("big_number", 999999999)
+
+Test 14: Large negative integer
+>>> try:
+...     bg.integer_validator("negative_big", -999999999)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] negative_big must be greater than 0
