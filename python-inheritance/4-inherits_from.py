@@ -2,12 +2,13 @@
 """Module that checks if an object inherits from a class.
 
 This module provides a function to determine if an object is an instance
-of a class that inherited from a specified class, excluding the class itself.
+of a class that inherited from a specified class, excluding the class
+itself.
 """
 
 
 def inherits_from(obj, a_class):
-    """Check if an object is an instance of a class that inherited from a_class.
+    """Check if an object is an instance of a class that inherited.
 
     This function returns True if the object is an instance of a class
     that inherited (directly or indirectly) from the specified class,
