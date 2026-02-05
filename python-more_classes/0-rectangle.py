@@ -5,7 +5,6 @@ This module contains a simple Rectangle class with no attributes or methods.
 It serves as a starting point for building more complex rectangle implementations.
 """
 
-
 class Rectangle:
     """An empty class that defines a rectangle.
 
