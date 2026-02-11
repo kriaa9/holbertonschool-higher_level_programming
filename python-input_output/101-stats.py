@@ -22,12 +22,13 @@ if __name__ == "__main__":
         for line in sys.stdin:
             try:
                 parts = line.split()
-                if len(parts) >= 2:
+                if len(parts) >= 7:
                     file_size = int(parts[-1])
                     status_code = int(parts[-2])
-                    total_size += file_size
-                    if status_code in status_counts:
-                        status_counts[status_code] += 1
+                    if parts[-3].endswith('"'):
+                        total_size += file_size
+                        if status_code in status_counts:
+                            status_counts[status_code] += 1
             except (ValueError, IndexError):
                 pass
 
