@@ -20,19 +20,20 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
+            line_count += 1
+            parts = line.split()
             try:
-                parts = line.split()
-                if len(parts) >= 7:
-                    file_size = int(parts[-1])
-                    status_code = int(parts[-2])
-                    if parts[-3].endswith('"'):
-                        total_size += file_size
-                        if status_code in status_counts:
-                            status_counts[status_code] += 1
+                file_size = int(parts[-1])
+                total_size += file_size
+            except (ValueError, IndexError):
+                pass
+            try:
+                status_code = int(parts[-2])
+                if status_code in status_counts:
+                    status_counts[status_code] += 1
             except (ValueError, IndexError):
                 pass
 
-            line_count += 1
             if line_count % 10 == 0:
                 print_stats(total_size, status_counts)
 
