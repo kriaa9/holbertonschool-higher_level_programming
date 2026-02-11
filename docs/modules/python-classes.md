@@ -149,7 +149,7 @@ This pattern ensures objects are always in a valid state — a key principle of 
 - **Design approach:** Tuple validation (must be tuple of 2 non-negative integers), horizontal offset with spaces, vertical offset with newlines.
 - **OOP principles:** Multi-property class with cross-property coordination.
 - **Edge-case coverage:** Position validation handles non-tuples, wrong-length tuples, negative values.
-- **Potential improvements:** Error message says "positive integers" but allows 0 — should say "non-negative integers".
+- **Potential improvements:** The error message reads `"position must be a tuple of 2 positive integers"` but the validation accepts 0 (i.e., non-negative integers). The message should say `"non-negative integers"` to accurately reflect the accepted range (0 and above).
 - **Real-world analogy:** CSS positioning — `margin-left` and `margin-top` for an HTML element.
 
 ---

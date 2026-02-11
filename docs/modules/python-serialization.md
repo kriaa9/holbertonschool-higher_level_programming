@@ -162,7 +162,7 @@ def send_data(data, host='localhost', port=12345):
 - **OOP principles:** Self-serialization, class methods for deserialization (factory pattern).
 - **Edge-case coverage:** Both methods catch broad `Exception` and return `None` on failure.
 - **Time complexity:** O(n) for serialization.
-- **Potential improvements:** Bare `except Exception` silences errors. Should catch specific exceptions or log the error.
+- **Potential improvements:** Bare `except Exception` silences all errors, including unexpected ones like `MemoryError` or `PermissionError`, making debugging difficult. Should catch only expected exceptions (`FileNotFoundError`, `pickle.UnpicklingError`, `EOFError`) and either log or re-raise unexpected ones.
 - **Security concerns:** `pickle.load()` can execute arbitrary code from tampered files.
 - **Real-world analogy:** Saving/loading machine learning model weights (scikit-learn uses pickle).
 
