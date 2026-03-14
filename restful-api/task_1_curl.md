@@ -1,6 +1,7 @@
 # Task 1: Consume Data from an API Using Command Line Tools (curl)
 
 ## Overview
+
 This task demonstrates how to use `curl` to interact with RESTful APIs from the command line. curl is a powerful tool for testing, debugging, and prototyping API requests.
 
 ---
@@ -10,10 +11,11 @@ This task demonstrates how to use `curl` to interact with RESTful APIs from the 
 ### Verify curl Installation
 
 ```bash
-$ curl --version
+curl --version
 ```
 
 **Output:**
+
 ```
 curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0
 Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp
@@ -27,17 +29,18 @@ Features: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerbe
 ### Fetch Content from a Webpage
 
 ```bash
-$ curl http://example.com
+curl http://example.com
 ```
 
 **Output:**
+
 ```html
 <!doctype html><html lang="en"><head><title>Example Domain</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}
 h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head>
 <body><div><h1>Example Domain</h1>
-<p>This domain is for use in documentation examples without needing permission. 
+<p>This domain is for use in documentation examples without needing permission.
 Avoid use in operations.</p>
 <p><a href="https://iana.org/domains/example">Learn more</a></p></div></body></html>
 ```
@@ -51,10 +54,11 @@ Avoid use in operations.</p>
 ### Retrieve Posts from JSONPlaceholder
 
 ```bash
-$ curl https://jsonplaceholder.typicode.com/posts
+curl https://jsonplaceholder.typicode.com/posts
 ```
 
 **Output (first 10 posts):**
+
 ```json
 [
   {
@@ -80,6 +84,7 @@ $ curl https://jsonplaceholder.typicode.com/posts
 ```
 
 **Data Structure of Each Post:**
+
 - `userId`: The ID of the user who wrote the post (integer)
 - `id`: The unique identifier of the post (integer)
 - `title`: The title of the post (string)
@@ -94,12 +99,13 @@ $ curl https://jsonplaceholder.typicode.com/posts
 ### Fetch Only Response Headers
 
 ```bash
-$ curl -I https://jsonplaceholder.typicode.com/posts
+curl -I https://jsonplaceholder.typicode.com/posts
 ```
 
 **Output:**
+
 ```
-HTTP/2 200 
+HTTP/2 200
 date: Sat, 14 Mar 2026 07:17:19 GMT
 content-type: application/json; charset=utf-8
 access-control-allow-credentials: true
@@ -117,6 +123,7 @@ alt-svc: h3=":443"; ma=86400
 ```
 
 **Key Headers Explained:**
+
 | Header | Value | Meaning |
 |--------|-------|---------|
 | `HTTP/2 200` | Status Code | Request succeeded |
@@ -132,10 +139,11 @@ alt-svc: h3=":443"; ma=86400
 ### Make a POST Request
 
 ```bash
-$ curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode.com/posts
+curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode.com/posts
 ```
 
 **Output:**
+
 ```json
 {
   "title": "foo",
@@ -146,6 +154,7 @@ $ curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode
 ```
 
 **Explanation:**
+
 - `-X POST`: Specifies HTTP method as POST (create/submit data)
 - `-d "title=foo&body=bar&userId=1"`: Sends form-encoded data in the request body
   - `title=foo`: Title of the new post
@@ -172,11 +181,11 @@ $ curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode
 
 ## Learning Outcomes
 
-✅ **Installed and verified curl** — Version 8.5.0 with multiple protocol support  
-✅ **Fetched webpage content** — Successfully retrieved HTML from example.com  
-✅ **Consumed API data** — Retrieved JSON array of 100 posts from JSONPlaceholder  
-✅ **Inspected HTTP headers** — Viewed response metadata including content-type, caching, and rate limits  
-✅ **Made POST requests** — Successfully created a new resource and received auto-generated ID  
+✅ **Installed and verified curl** — Version 8.5.0 with multiple protocol support
+✅ **Fetched webpage content** — Successfully retrieved HTML from example.com
+✅ **Consumed API data** — Retrieved JSON array of 100 posts from JSONPlaceholder
+✅ **Inspected HTTP headers** — Viewed response metadata including content-type, caching, and rate limits
+✅ **Made POST requests** — Successfully created a new resource and received auto-generated ID
 
 ---
 
