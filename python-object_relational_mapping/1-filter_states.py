@@ -10,13 +10,13 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
     cur = db.cursor()
 
-    # Execute the query with a filter
-    # LIKE BINARY 'N%' ensures we only get names starting with specific uppercase 'N'
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    # Execute the query to get all states sorted by states.id
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     cur.close()
     db.close()
