@@ -3,7 +3,7 @@
 // Grab the first custom argument at index 2
 const arg1 = process.argv[2];
 
-// Grab the second custom argument at index 3
+// Grab the second custom argument at index 
 const arg2 = process.argv[3];
 
 // Use a template literal (the backticks ``) to easily insert the variables into a string.
